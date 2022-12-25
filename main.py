@@ -63,7 +63,7 @@ u = [
     'i',
     'j',
     'k',
-    '',
+    'l',
     'm',
     'n',
     'o',
@@ -79,28 +79,28 @@ u = [
     'z',
 ]
 
-nContains = str.lower(input("Má heslo obsahovať čísla? a/n: "))
-lContains = str.lower(input("Má heslo obsahovať písmena? a/n: "))
-sContains = str.lower(input("Má heslo obsahovať znaky? a/n: "))
-power = int(input("Zadaj počet znakov v hesle: "))
-r = input('Vygenerovat? a/n: ')
+nContains = str.lower(input("Should it contain numbers? y/n: "))
+lContains = str.lower(input("Should it contain letters? y/n: "))
+sContains = str.lower(input("Should it contain symbols? y/n: "))
+power = int(input("Enter number of characters: "))
+r = input('Generate? y/n: ')
 u = [element.upper() for element in u]
 
-while r == 'a':
+while r == 'y':
     p = []
     p.append(str(''.join(u)))
-    if nContains == "a":
+    if nContains == "y":
         p.append(str(''.join(n)))
-    if lContains == "a":
+    if lContains == "y":
         p.append(str(''.join(letter)))
-    if sContains == "a":
+    if sContains == "y":
         p.append(str(''.join(s)))
     if len(p) == 0:
-        print('Chces prazdne heslo :D')
+        print('You want an empty password :D')
     array = ''.join(p)
     passw = []
     for i in range(power):
         passw.append(choice(array))
-    print("Nové náhodné heslo je: >>>", ''.join(passw), '<<<')
-    r = input('Vygenerovat znova? a/n: ')
-print('Nezabudni si heslo uložiť!')
+    print("Your password is: >>>", ''.join(passw), '<<<')
+    r = input('Re-generate? y/n: ')
+print('Don`t forget to save your password!')
